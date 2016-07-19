@@ -4,6 +4,7 @@
 //
 //  Created by Tony on 6/28/16.
 //  Copyright © 2016 Anthony Cavallo. All rights reserved.
+//  This program uses the Blowfish encryption algorithm to encrypt a message from stdin with a key as one of the command-line inputs.
 
 #include "blow.h"
 
