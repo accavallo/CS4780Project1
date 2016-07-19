@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		630FFAB01D2342E000D7FD1B /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 630FFAAF1D2342E000D7FD1B /* main.c */; };
+		630FFAB71D28041C00D7FD1B /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = 630FFAB61D28041C00D7FD1B /* Makefile */; };
+		630FFABD1D32D72B00D7FD1B /* encryption.c in Sources */ = {isa = PBXBuildFile; fileRef = 630FFABB1D32D72B00D7FD1B /* encryption.c */; };
+		630FFABF1D32D78700D7FD1B /* blowfish_consts.c in Sources */ = {isa = PBXBuildFile; fileRef = 630FFABE1D32D78700D7FD1B /* blowfish_consts.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,12 @@
 /* Begin PBXFileReference section */
 		630FFAAC1D2342E000D7FD1B /* Proj1 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Proj1; sourceTree = BUILT_PRODUCTS_DIR; };
 		630FFAAF1D2342E000D7FD1B /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		630FFAB61D28041C00D7FD1B /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		630FFAB81D28044A00D7FD1B /* blow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = blow.h; sourceTree = "<group>"; };
+		630FFAB91D28271700D7FD1B /* key */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = key; sourceTree = "<group>"; };
+		630FFABA1D28271700D7FD1B /* message */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = message; sourceTree = "<group>"; };
+		630FFABB1D32D72B00D7FD1B /* encryption.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = encryption.c; sourceTree = "<group>"; };
+		630FFABE1D32D78700D7FD1B /* blowfish_consts.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = blowfish_consts.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +67,12 @@
 			isa = PBXGroup;
 			children = (
 				630FFAAF1D2342E000D7FD1B /* main.c */,
+				630FFABB1D32D72B00D7FD1B /* encryption.c */,
+				630FFAB81D28044A00D7FD1B /* blow.h */,
+				630FFABE1D32D78700D7FD1B /* blowfish_consts.c */,
+				630FFAB91D28271700D7FD1B /* key */,
+				630FFABA1D28271700D7FD1B /* message */,
+				630FFAB61D28041C00D7FD1B /* Makefile */,
 			);
 			path = Proj1;
 			sourceTree = "<group>";
@@ -118,6 +133,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				630FFABD1D32D72B00D7FD1B /* encryption.c in Sources */,
+				630FFABF1D32D78700D7FD1B /* blowfish_consts.c in Sources */,
+				630FFAB71D28041C00D7FD1B /* Makefile in Sources */,
 				630FFAB01D2342E000D7FD1B /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,6 +257,7 @@
 				630FFAB51D2342E000D7FD1B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
