@@ -84,7 +84,7 @@ void splitKey(unsigned long key) {
     }
 }
 
-//We XOR a couple things with the integers sent. Whether this is the key splitting for the parray and sboxes or the message itself, both go through this process.s
+//We XOR a couple things with the integers sent. Whether this is the key splitting for the parray and sboxes or the message itself, both go through this process.
 struct lAndR * magicHappens(unsigned L, unsigned R, int printStuff) {
     unsigned prevL, prevR;
     struct lAndR *nums = malloc(sizeof(struct lAndR));

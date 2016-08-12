@@ -8,6 +8,7 @@
 
 #include "blow.h"
 
+//This comment is added solely to test if GitHub is actually counting my commits.
 int main(int argc, const char * argv[]) {
     
     unsigned long key = strtol(argv[1], NULL, 16);
@@ -48,6 +49,15 @@ int main(int argc, const char * argv[]) {
     //With this for loop, we iterate through the entire message, along with any additional bytes up to the next mod 8 if necessary to ensure that we are packing with zeroes.
     int index = 0;
     for(i = 0; i < count; i++) {
+        //I think this is where I messed up originally. This was after the index increment, which means that it would only get 7 bytes or so before resetting. Maybe not, I'll have to ask Schulte later.
+        if(index >= 8) {
+            //                printf("L = %x\n", L);
+            //                printf("R = %x\n", R);
+            index = 0;
+            
+            magicHappens(L, R, 1);
+            L = 0; R = 0;
+        }
         if(i < strlen(msg)) {
 //            printf("index = %i\n", index);
             if(index < 4) {
@@ -62,18 +72,15 @@ int main(int argc, const char * argv[]) {
                     R <<= 8;
             }
             index++;
-            if(index >= 8) {
-//                printf("L = %x\n", L);
-//                printf("R = %x\n", R);
-                index = 0;
-                
-                magicHappens(L, R, 1);
-                L = 0; R = 0;
-            }
         } else {
-            if(index < 4)
+            //We need to account for any of the leftover bytes. Therefore, we need to shift left, to pack with 0s, anything that isn't there. First we check to see if the index is less than 4, otherwise we can skip L and move straight to R.
+            if(index < 4) {
                 L <<= 8 * (4 - index);
-            R <<= 8 * (8 - index);
+                R = 0;
+            } else {
+            //Now, we need to shift over R by the number of missing bytes. Since we're doing bit shifting, we need to multiply the missing bits by 8 after subtracting from the total it could be, i.e. 8.
+                R <<= 8 * (8 - index);
+            }
             magicHappens(L, R, 1);
             
             break;
